@@ -7,7 +7,7 @@ function ready() {
   document.getElementById('gform')
 }
 function setRandomId() {
-  document.getElementById('taskid').value = Math.round(10000 * Math.random());
+  document.getElementById('taskid').value = "n" + Math.round(10000 * Math.random());
   document.getElementById("newtodo").value = "";
   document.getElementById("taskstatus").value = "pending";
 }
@@ -29,7 +29,7 @@ function formatLocalDB(data) {
   }
   tempDB.forEach(function(element, index) {
     var currentList = element.split(",");
-    var id = "n" + currentList[3];
+    var id = currentList[3];
     localDB[id] = {
       task: currentList[1],
       currentStatus: currentList[2]
