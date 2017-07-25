@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+  <script src="myscript.js"></script>
+  <link rel="stylesheet" href="master.css" >
 </head>
-<body>
+<body onload="ready();">
   <h1>Todo App</h1>
   <form
+    id='gform'
     name="gform"
     enctype="text/plain"
     action="https://docs.google.com/forms/d/e/1FAIpQLSedhbdnaaummFwKnh5bh6wGV2WFKhvW9lqq3PgcTmYiM6Ef7Q/formResponse"
-    target="hidden_iframe" >
-    <input id="newtodo" type="text" placeholder="New task" name="entry.1878290825" />
-    <input type="hidden" value="pending" name="entry.1177460293" />
+    target="hidden_iframe"
+    onsubmit="return handleSubmit()" >
+    <input id="newtodo" type="text" placeholder="New task" name="entry.1878290825"/>
+    <input id="taskstatus" type="hidden" value="pending" name="entry.1177460293" />
+    <input id="taskid" type="hidden" name="entry.2002093344" value="">
     <input type="submit" value="submit" />
   </form>
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  <div id="todolist">
+  </div>
 </body>
 </html>
