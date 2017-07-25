@@ -7,7 +7,7 @@ function ready() {
   document.getElementById('gform')
 }
 function setRandomId() {
-  document.getElementById('taskid').value = "n" + Math.round(10000 * Math.random());
+  document.getElementById('taskid').value = "n" + Math.round(100000 * Math.random());
   document.getElementById("newtodo").value = "";
   document.getElementById("taskstatus").value = "pending";
 }
